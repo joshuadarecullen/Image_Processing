@@ -50,6 +50,14 @@ if __name__ == "__main__":
     gray = cvtColor(img, COLOR_BGR2GRAY)
 
     # Laplace operator
+    '''
+    Because the Laplacian is a derivative operator, it highlights sharp intensity tran-
+    sitions in an image and de-emphasizes regions of slowly varying intensities. This
+    will tend to produce images that have grayish edge lines and other discontinuities,
+    all superimposed on a dark, featureless background. Background features can be
+    “recovered” while still preserving the sharpening effect of the Laplacian by adding
+    the Laplacian image to the original
+    '''
     Laplace_kernel = np.array([[0, 1, 0], [1, -4, 1], [0, 1, 0]])
     out = img_convolve(gray, Laplace_kernel).astype(np.uint8)
 
