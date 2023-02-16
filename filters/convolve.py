@@ -37,6 +37,7 @@ def img_convolve(image, filter_kernel):
 
     # reshape and get the dst image
     dst = np.dot(image_array, kernel_array).reshape(height, width)
+
     return dst
 
 
