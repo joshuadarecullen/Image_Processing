@@ -1,13 +1,13 @@
-# @Author  : lightXu
+# @Author  : Joshua
 # @File    : sobel_filter.py
-# @Time    : 2019/7/8 0008 下午 16:26
+# @Time    : feb 2023
 import numpy as np
 from cv2 import COLOR_BGR2GRAY, cvtColor, imread, imshow, waitKey
 
 from digital_image_processing.filters.convolve import img_convolve
 
 
-def sobel_filter(image):
+def sobel_filter(image) -> np.ndarray and float:
     kernel_x = np.array([[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]])
     kernel_y = np.array([[1, 2, 1], [0, 0, 0], [-1, -2, -1]])
 
