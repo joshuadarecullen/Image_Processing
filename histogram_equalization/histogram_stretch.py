@@ -29,7 +29,7 @@ class contrastStretch:
         self.img = cv2.imread(input_image, 0) #  using 0 to read image in grey scale mode
         self.original_image = copy.deepcopy(self.img)
 
-        x, _, _ = plt.hist(self.img.ravel(), 256, [0, 256], label="x") #  get frequency of pixels for each colour in the rgb colour range (256)
+        x, _, _ = plt.hist(self.img.ravel(), 256, [0, 256], label="x") #  get frequency of pixels for each colour in the grayscale colour range (256) 0-white - 256-black
         self.k = np.sum(x) # total amount of pixels
 
         # create the new greyscale colour assosciated with each num 1-256
